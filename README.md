@@ -31,7 +31,7 @@ main <- dev <- feature/login
 
 *충돌이 발생하면 빠르게 해결하고 공유합니다.*
 
-*main:완성본 dev:개발 완료한 기능(안정성 확인 안됨) feature/기능명:각자 맡은 기능<--새로 만들어야함*
+*main:완성본 || dev:개발 완료한 기능(안정성 확인 안됨) || feature/기능명:각자 맡은 기능<--새로 만들어야함*
 
 *dev 브랜치로 이동 + 최신화 git checkout dev git pull origin dev*
 
