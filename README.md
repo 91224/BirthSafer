@@ -1,6 +1,8 @@
 # BirthSafer
 삼육대학교 2026학년도 1학기 모바일프로그래밍(캡스톤) 프로젝트
 
+# 중요 꼭 읽어주세요!!!!
+
 # 깃 브랜치 사용 규칙
 >main
 >>완성된 안정적인 코드만 모여있는 브랜치입니다.
@@ -17,6 +19,11 @@
 3. 코드 리뷰 후 문제가 없으면 dev 브랜치에 병합합니다.
 4. 모든 기능이 모이고 테스트가 완료되면 dev 브랜치 내용을 main 브랜치에 병합합니다.
 
+예시
+main <- dev <- feature/login
+            <- feature/signup
+
+
 ### 중요
 *main 브랜치는 직접 작업하지 않습니다.*
 
@@ -24,7 +31,7 @@
 
 *충돌이 발생하면 빠르게 해결하고 공유합니다.*
 
-*main:완성본 dev:개발 완료한 기능(안정성 확인 안됨) feature/기능명:각자 맡은 기능<--새로 만들어야함*
+*main:완성본 || dev:개발 완료한 기능(안정성 확인 안됨) || feature/기능명:각자 맡은 기능<--새로 만들어야함*
 
 *dev 브랜치로 이동 + 최신화 git checkout dev git pull origin dev*
 
@@ -36,5 +43,28 @@
 
 *기능 개발완료->feature/기능명->리뷰 후 문제 없으면 dev 병합-> 모든 기능 통합+테스트 완료->main*
 
+### 작업하실 때 항상 체크리스트로 확인하세요
+[ ] feature 브랜치 생성  
+[ ] 코드 작업  
+[ ] commit & push  
+[ ] PR 요청 & 리뷰  
+[ ] dev 병합
+
 # 중요!!!!!!!!!!
+# main은 안정된 최종 코드만 들어가는 공간입니다 절대 건드리지 마세요
 # 절대 dev에서 직접 작업하지 마세요 (다른 사람이 작업한 코드가 날아가거나 덮어씌워질 수 있습니다ㅜㅜ)
+# dev 브랜치는 최신화된 코드를 받는 용도입니다 절대 dev에 바로 업로드하거나 작업하지 마세요
+
+# dev 최신화
+git checkout dev
+git pull origin dev
+
+# 기능 브랜치 생성
+git checkout -b feature/login
+
+# 작업 후 커밋
+git add .
+git commit -m "feat: 로그인 기능 구현"
+
+# 푸시
+git push origin feature/login
