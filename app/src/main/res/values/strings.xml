@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">BirthSafer</string>
+    <string name="login_title">로그인</string>
+    <string name="id_hint">아이디를 입력하세요</string>
+    <string name="password_hint">비밀번호를 입력하세요</string>
+    <string name="login_button">로그인</string>
+    <string name="signup_text">회원가입</string>
 </resources>

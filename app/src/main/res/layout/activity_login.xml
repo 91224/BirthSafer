@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".MainActivity">
+
+    <!-- 전체 카드  -->
+    <LinearLayout
+        android:id="@+id/login_card"
+        android:layout_width="356dp"
+        android:layout_height="486dp"
+        android:layout_marginTop="167dp"
+        android:background="@drawable/card_background"
+        android:elevation="4dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- BirthSafer -->
+        <TextView
+            android:layout_width="133dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="54dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:minHeight="33dp"
+            android:text="@string/app_name"
+            android:textColor="#000000"
+            android:textSize="27sp"
+            android:textStyle="bold" />
+
+        <!-- 로그인 텍스트 -->
+        <TextView
+            android:layout_width="56dp"
+            android:layout_height="wrap_content"
+
+
+
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:minHeight="24dp"
+            android:text="@string/login_title"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <!-- 아이디 입력창 -->
+        <EditText
+            android:id="@+id/id_input"
+            android:layout_width="315dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="47dp"
+            android:background="@drawable/edit_text_background"
+            android:hint="@string/id_hint"
+            android:importantForAutofill="no"
+            android:inputType="textVisiblePassword"
+            android:imeOptions="actionNext"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="#000000"
+            android:textColorHint="#7F7F7F"
+            android:textSize="20sp" />
+
+        <!-- 비밀번호 입력창 -->
+        <EditText
+            android:id="@+id/password_input"
+            android:layout_width="315dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/edit_text_background"
+            android:hint="@string/password_hint"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            android:imeOptions="actionDone"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="#000000"
+            android:textColorHint="#7F7F7F"
+            android:textSize="20sp" />
+
+        <!-- 로그인 버튼 -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/login_button"
+            android:layout_width="118dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="45dp"
+            android:background="@drawable/button_background"
+            android:text="@string/login_button"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- 회원가입 버튼 -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/signup_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:background="@android:color/transparent"
+            android:text="@string/signup_text"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="16.96sp"
+            android:minHeight="48dp"
+            android:minWidth="48dp"
+            android:padding="4dp"/>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
