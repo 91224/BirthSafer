@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BirthSafer</string>
+    <string name="signup">회원가입</string>
+    <string name="check_disease">기저 질환을 체크해주세요</string>
+    <string name="preg_diabetes">임신성 당뇨</string>
+    <string name="appname">BirthSafer</string>
+</resources>
