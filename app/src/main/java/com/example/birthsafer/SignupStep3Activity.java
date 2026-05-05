@@ -1,5 +1,6 @@
 package com.example.birthsafer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -8,7 +9,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class SignupStep3Activity extends AppCompatActivity {
 
     CheckBox checkDiabetesPreg, checkHypertensionPreg, checkDiabetes, checkHypertension;
     Button btnSignup;
@@ -50,13 +51,17 @@ public class MainActivity extends AppCompatActivity {
                     result += "고혈압 (기저질환)\n";
                 }
 
-                // 아무것도 선택 안 했을 때
                 if (result.equals("선택된 질환:\n")) {
                     result = "선택된 질환이 없습니다.";
                 }
 
-                // 결과 출력 (임시)
-                Toast.makeText(MainActivity.this, result, Toast.LENGTH_LONG).show();
+
+                //  로그인 화면으로 이동
+                Intent intent = new Intent(SignupStep3Activity.this, MainActivity.class);
+                startActivity(intent);
+
+                // 현재 화면 종료 (뒤로가기 방지)
+                finish();
             }
         });
     }
