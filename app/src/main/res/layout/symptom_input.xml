@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 증상 입력 페이지
+     Description : 증상 입력용 화면 -->
+<!-- Author       : 권유진
+     Contributors :
+
+     Created     : 2026-04-26
+     Last Update : 2026-04-30 -->
+<!-- Revision History
+     v1.0.0 - UI 제작 -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/symptomInputXml"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F0F0">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- 년. 월. 일(요일) AM/PM 현재시각 -->
+            <TextView
+                android:id="@+id/NowTimeTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="날짜"
+                android:textSize="20sp"
+                android:layout_marginTop="80dp"
+                android:layout_gravity="center"
+                android:includeFontPadding="false"
+                android:fontFamily="@font/notosanskr_bold"/>
+
+            <!-- 증상 입력 카드 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardSymptomInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="40dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:text="증상 입력"
+                        android:textSize="20sp"
+
+                        android:layout_gravity="center"
+                        android:includeFontPadding="false"
+                        android:fontFamily="@font/notosanskr_bold"/>
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/slider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:stepSize="1"
+                        android:valueFrom="0"
+                        android:valueTo="5"
+                        app:thumbColor="#777777"
+                        app:thumbRadius="10dp"
+                        app:trackColorActive="#888888"
+                        app:trackColorInactive="#DDDDDD" />
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/slider2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:stepSize="1"
+                        android:valueFrom="0"
+                        android:valueTo="5"
+                        app:thumbColor="#777777"
+                        app:thumbRadius="10dp"
+                        app:trackColorActive="#888888"
+                        app:trackColorInactive="#DDDDDD" />
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/slider3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:stepSize="1"
+                        android:valueFrom="0"
+                        android:valueTo="5"
+                        app:thumbColor="#777777"
+                        app:thumbRadius="10dp"
+                        app:trackColorActive="#888888"
+                        app:trackColorInactive="#DDDDDD" />
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/slider4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:stepSize="1"
+                        android:valueFrom="0"
+                        android:valueTo="5"
+                        app:thumbColor="#777777"
+                        app:thumbRadius="10dp"
+                        app:trackColorActive="#888888"
+                        app:trackColorInactive="#DDDDDD" />
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/slider5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:stepSize="1"
+                        android:valueFrom="0"
+                        android:valueTo="5"
+                        app:thumbColor="#777777"
+                        app:thumbRadius="10dp"
+                        app:trackColorActive="#888888"
+                        app:trackColorInactive="#DDDDDD" />
+
+                    <Button
+                        android:id="@+id/symptomSaveButton"
+                        android:layout_width="160dp"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginBottom="30dp"
+                        android:text="저장"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:backgroundTint="#000000">
+
+                    </Button>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

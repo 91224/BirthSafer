@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 리포트 페이지
+     Description : 혈압 입력용 화면 -->
+<!-- Author       : 권유진
+     Contributors :
+
+     Created     : 2026-05-05
+     Last Update : 2026-05-10 -->
+<!-- Revision History
+     v1.0.0 - UI 제작 -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/reportXml"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F0F0">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="80dp"
+                android:text="리포트"
+                android:textSize="24sp"
+                android:includeFontPadding="false"
+                android:fontFamily="@font/notosanskr_bold"/>
+
+            <!-- 년 월 (주차) -->
+            <TextView
+                android:id="@+id/todayTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="20dp"
+                android:text="날짜"
+                android:textSize="20sp"
+                android:includeFontPadding="false"
+                android:fontFamily="@font/notosanskr_medium"/>
+
+            <!-- 혈압 카드 레이아웃 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <!-- 수축기 혈압 요약 -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardBPSystolicSummary"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="8dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="22dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="평균 수축기 혈압"
+                            android:textSize="16sp"
+                            android:layout_gravity="center"
+                            android:includeFontPadding="false"
+                            android:fontFamily="@font/notosanskr_bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="주의"
+                            android:textSize="16sp"
+                            android:layout_gravity="center"
+                            android:includeFontPadding="false"
+                            android:fontFamily="@font/notosanskr_bold"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="120.4"
+                                android:textSize="32sp"
+                                android:includeFontPadding="false"
+                                android:fontFamily="@font/inter_bold"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="mmHg"
+                                android:textSize="16sp"
+                                android:includeFontPadding="false"
+                                android:fontFamily="@font/inter_medium"/>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- 이완기 혈압 요약 -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardBPDiastolicSummary"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="16dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="22dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="평균 이완기 혈압"
+                            android:textSize="16sp"
+                            android:layout_gravity="center"
+                            android:includeFontPadding="false"
+                            android:fontFamily="@font/notosanskr_bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="주의"
+                            android:textSize="16sp"
+                            android:layout_gravity="center"
+                            android:includeFontPadding="false"
+                            android:fontFamily="@font/notosanskr_bold"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="73.2"
+                                android:textSize="32sp"
+                                android:includeFontPadding="false"
+                                android:fontFamily="@font/inter_bold"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="mmHg"
+                                android:textSize="16sp"
+                                android:includeFontPadding="false"
+                                android:fontFamily="@font/inter_medium"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <!-- 혈당 카드 레이아웃 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <!-- 공복 혈당 요약 -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardBSFBGSummary"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="8dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="22dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="평균 공복 혈당"
+                            android:layout_gravity="center"
+                            android:textSize="16sp"
+                            android:includeFontPadding="false"
+                            android:fontFamily="@font/notosanskr_bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="주의"
+                            android:textSize="16sp"
+                            android:layout_gravity="center"
+                            android:includeFontPadding="false"
+                            android:fontFamily="@font/notosanskr_bold"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="90.7"
+                                android:textSize="32sp"
+                                android:includeFontPadding="false"
+                                android:fontFamily="@font/inter_bold"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="mg/dL"
+                                android:textSize="16sp"
+                                android:includeFontPadding="false"
+                                android:fontFamily="@font/inter_medium"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- 식후 혈당 요약 -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardBSPPGSummary"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="16dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="22dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="평균 식후 혈당"
+                            android:layout_gravity="center"
+                            android:textSize="16sp"
+                            android:includeFontPadding="false"
+                            android:fontFamily="@font/notosanskr_bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="주의"
+                            android:textSize="16sp"
+                            android:layout_gravity="center"
+                            android:includeFontPadding="false"
+                            android:fontFamily="@font/notosanskr_bold"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="116.2"
+                                android:textSize="32sp"
+                                android:includeFontPadding="false"
+                                android:fontFamily="@font/inter_bold"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="mg/dL"
+                                android:textSize="16sp"
+                                android:includeFontPadding="false"
+                                android:fontFamily="@font/inter_medium"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardBPReportSummary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="주간 혈압 트렌드"
+                        android:textSize="20sp"
+                        android:includeFontPadding="false"
+                        android:fontFamily="@font/notosanskr_bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="그래프"
+                        android:textSize="16sp"
+                        android:includeFontPadding="false"
+                        android:fontFamily="@font/notosanskr_regular"/>
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardBSReportSummary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="주간 혈당 트렌드"
+                        android:textSize="20sp"
+                        android:includeFontPadding="false"
+                        android:fontFamily="@font/notosanskr_bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="그래프"
+                        android:textSize="16sp"
+                        android:includeFontPadding="false"
+                        android:fontFamily="@font/notosanskr_regular"/>
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardSymptomReportSummary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="주간 증상 트렌드"
+                        android:textSize="20sp"
+                        android:includeFontPadding="false"
+                        android:fontFamily="@font/notosanskr_bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="그래프"
+                        android:textSize="16sp"
+                        android:includeFontPadding="false"
+                        android:fontFamily="@font/notosanskr_regular"/>
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAIReportSummary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="AI 피드백"
+                        android:textSize="20sp"
+                        android:includeFontPadding="false"
+                        android:fontFamily="@font/notosanskr_bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="내용"
+                        android:textSize="16sp"
+                        android:includeFontPadding="false"
+                        android:fontFamily="@font/notosanskr_regular"/>
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <Button
+                android:id="@+id/PDFSaveButton"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="30dp"
+                android:text="PDF로 내보내기"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:textSize="16sp"
+                android:backgroundTint="#000000">
+
+            </Button>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
