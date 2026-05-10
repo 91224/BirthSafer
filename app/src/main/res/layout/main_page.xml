@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 메인 페이지
+     Description : 메인 화면입니다 -->
+<!-- Author       : 권유진
+     Contributors :
+
+     Created     : 2026-04-26
+     Last Update : 2026-04-30 -->
+<!-- Revision History
+     v1.0.0 - UI 제작 -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/mainPageXml"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F0F0">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 상단 텍스트 -->
+            <TextView
+                android:id="@+id/txt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="안녕하세요, 김민지님"
+                android:textSize="24sp"
+                android:layout_marginTop="80dp"
+                android:layout_gravity="center"
+                android:includeFontPadding="false"
+                android:fontFamily="@font/notosanskr_bold"/>
+
+            <!-- 1. 예정일 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardDeadline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingTop="25dp"
+                        android:paddingBottom="25dp"
+                        android:paddingStart="35dp"
+                        android:paddingEnd="35dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="예정일"
+                            android:textSize="20sp"
+                            android:includeFontPadding="false"
+                            android:fontFamily="@font/notosanskr_bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="2026.05.30"
+                            android:textColor="#7C7C7C"
+                            android:textSize="15sp"
+                            android:includeFontPadding="false"
+                            android:fontFamily="@font/inter_regular"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="D-52"
+                        android:textSize="36sp"
+                        android:includeFontPadding="false"
+                        android:fontFamily="@font/inter_bold"
+                        android:paddingStart="35dp"
+                        android:paddingEnd="35dp"/>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 2. 증상 및 알림 요약 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAiRecommend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingTop="25dp"
+                    android:paddingBottom="25dp"
+                    android:paddingStart="35dp"
+                    android:paddingEnd="35dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="문구추천"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:includeFontPadding="false"
+                        android:fontFamily="@font/inter_regular"/>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 3. 혈압 카드 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardBloodPressure"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingTop="25dp"
+                    android:paddingBottom="25dp"
+                    android:paddingStart="35dp"
+                    android:paddingEnd="35dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:src="@drawable/ic_blood_pressure" />
+
+                        <Space
+                            android:layout_width="6dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="120/80"
+                            android:textSize="27sp"
+                            android:includeFontPadding="false"
+                            android:fontFamily="@font/inter_bold"/>
+
+                        <Space
+                            android:layout_width="2dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="mmhg"
+                            android:textColor="#7C7C7C"
+                            android:textSize="15sp"
+                            android:includeFontPadding="false"
+                            android:fontFamily="@font/inter_regular"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:paddingTop="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="수축기 120-142"
+                            android:textSize="16sp"
+                            android:includeFontPadding="false"
+                            android:fontFamily="@font/notosanskr_medium"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="이완기 74-92"
+                            android:textSize="16sp"
+                            android:includeFontPadding="false"
+                            android:fontFamily="@font/notosanskr_medium"/>
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/bloodPressureInputButton"
+                        android:layout_width="160dp"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="16dp"
+                        android:text="입력"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:backgroundTint="#EAEAEA">
+
+                    </Button>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 4. 혈당 카드 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardBloodSugar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingTop="25dp"
+                    android:paddingBottom="25dp"
+                    android:paddingStart="35dp"
+                    android:paddingEnd="35dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:src="@drawable/ic_blood_sugar" />
+
+                        <Space
+                            android:layout_width="6dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="\?"
+                            android:textSize="27sp"
+                            android:includeFontPadding="false"
+                            android:fontFamily="@font/inter_bold"/>
+
+                        <Space
+                            android:layout_width="2dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="mm/dL"
+                            android:textColor="#7C7C7C"
+                            android:textSize="15sp"
+                            android:includeFontPadding="false"
+                            android:fontFamily="@font/inter_regular"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:paddingTop="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="아직 혈당을 입력하지 않았어요"
+                            android:textSize="16sp"
+                            android:includeFontPadding="false"
+                            android:fontFamily="@font/notosanskr_medium"/>
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/bloodSugarInputButton"
+                        android:layout_width="160dp"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="16dp"
+                        android:text="입력"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:backgroundTint="#EAEAEA">
+
+                    </Button>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 5. 증상 카드 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardSymptom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingTop="25dp"
+                    android:paddingBottom="25dp"
+                    android:paddingStart="35dp"
+                    android:paddingEnd="35dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="일일 증상"
+                        android:textSize="24sp"
+                        android:includeFontPadding="false"
+                        android:fontFamily="@font/notosanskr_bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="메스꺼움, 피로감, 두통"
+                        android:textSize="16sp"
+                        android:includeFontPadding="false"
+                        android:fontFamily="@font/notosanskr_medium"/>
+                    <Button
+                        android:id="@+id/symptomInputButton"
+                        android:layout_width="160dp"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="16dp"
+                        android:text="입력"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:backgroundTint="#EAEAEA">
+                    </Button>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 6. ai 문구추천 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAiDiet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingTop="25dp"
+                    android:paddingBottom="25dp"
+                    android:paddingStart="35dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="AI 식단 추천"
+                        android:textSize="24sp"
+                        android:includeFontPadding="false"
+                        android:fontFamily="@font/notosanskr_bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="문구추천 2"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:includeFontPadding="false"
+                        android:fontFamily="@font/inter_regular"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- 하단 Nav -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottom_nav_bg"
+        app:menu="@menu/bottom_nav_menu"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

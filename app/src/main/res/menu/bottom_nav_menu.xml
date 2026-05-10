@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- bottom_nav_menu.xml
+     Description : 하단 네비게이션 xml 파일입니다. -->
+<!-- Author       : 권유진
+     Contributors :
+
+     Created     : 2026-04-26
+     Last Update : 2026-05-10 -->
+<!-- Revision History
+     v1.0.0 - 제작
+     v1.1.0 - ic 변경 -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_main_page"
+        android:icon="@drawable/ic_nav_main_button"
+        android:title="홈" />
+    <item
+        android:id="@+id/nav_summary_page"
+        android:icon="@drawable/ic_nav_summary_button"
+        android:title="오늘요약" />
+    <item
+        android:id="@+id/nav_calendar_page"
+        android:icon="@drawable/ic_nav_calendar_button"
+        android:title="캘린더" />
+    <item
+        android:id="@+id/nav_mypage"
+        android:icon="@drawable/ic_nav_mypage_button"
+        android:title="설정" />
+
+</menu>
