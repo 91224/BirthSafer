@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 회원가입-1 페이지
+     Description : 혈압 입력용 화면 -->
+<!-- Author       : 문경민
+     Contributors : 권유진
+
+     Created     : 2026-04-09
+     Last Update : 2026-05-10 -->
+<!-- Revision History
+     v1.0.0 - UI 제작
+     v1.1.0 - UI 수정 -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/signUpPageXml"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="#F0F0F0">
+
+    <LinearLayout
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardSymptom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="22dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="0dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingTop="25dp"
+                android:paddingBottom="25dp"
+                android:paddingStart="35dp"
+                android:paddingEnd="35dp"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="BirthSafer"
+                    android:textSize="27sp"
+                    android:includeFontPadding="false"
+                    android:fontFamily="@font/inter_bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="40dp"
+                    android:text="회원가입"
+                    android:textSize="20sp"
+                    android:includeFontPadding="false"
+                    android:fontFamily="@font/notosanskr_medium"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/signUpNameLayout"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#7F7F7F"
+                    android:hint="이름을 입력하세요">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/signUpNameEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:textSize="20sp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/signUpIdLayout"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#7F7F7F"
+                    android:hint="아이디를 입력하세요">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/signUpIdEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:textSize="20sp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/signUpPwLayout"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#7F7F7F"
+                    app:endIconMode="password_toggle"
+                    android:hint="비밀번호를 입력하세요">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/signUpPwEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:inputType="textPassword"
+                        android:textSize="20sp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <Button
+                    android:id="@+id/NextButton"
+                    android:layout_width="160dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginBottom="30dp"
+                    android:text="다음 단계"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:backgroundTint="#000000">
+                </Button>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
