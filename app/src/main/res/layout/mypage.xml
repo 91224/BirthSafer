@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 마이페이지
+     Description : 마이페이지 및 설정페이지 -->
+<!-- Author       : 권유진
+     Contributors :
+
+     Created     : 2026-05-05
+     Last Update : 2026-05-10 -->
+<!-- Revision History
+     v1.0.0 - UI 제작 -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/myPageXml"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F0F0">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 1. 유저 정보 카드 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardEditProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingTop="25dp"
+                        android:paddingBottom="25dp"
+                        android:paddingStart="35dp"
+                        android:paddingEnd="35dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="54dp"
+                                android:layout_height="54dp"
+                                android:src="@drawable/ic_profile" />
+
+                            <Space
+                                android:layout_width="10dp"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="김민지"
+                                android:textSize="24sp"
+                                android:includeFontPadding="false"
+                                android:fontFamily="@font/notosanskr_bold"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="20dp">
+
+                            <!-- 왼쪽: 예정일 + 날짜 -->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="예정일"
+                                    android:textSize="20sp"
+                                    android:includeFontPadding="false"
+                                    android:fontFamily="@font/notosanskr_bold"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="2026.05.30"
+                                    android:textSize="15sp"
+                                    android:textColor="#7C7C7C"
+                                    android:fontFamily="@font/inter_regular"/>
+                            </LinearLayout>
+
+                            <!-- 오른쪽: D-Day -->
+                            <TextView
+                                android:id="@+id/dDayText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="D-52"
+                                android:textSize="36sp"
+                                android:fontFamily="@font/inter_bold"/>
+                        </LinearLayout>
+                        <Button
+                            android:layout_width="160dp"
+                            android:layout_height="48dp"
+                            android:layout_marginTop="16dp"
+                            android:text="수정"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:backgroundTint="#000000">
+                        </Button>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <!-- 2. 기저질환 카드 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardEditSymptom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingTop="25dp"
+                    android:paddingBottom="25dp"
+                    android:paddingStart="35dp"
+                    android:paddingEnd="35dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="기저 질환"
+                        android:textSize="24sp"
+                        android:includeFontPadding="false"
+                        android:fontFamily="@font/notosanskr_bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="임신성 당뇨"
+                        android:textSize="16sp"
+                        android:includeFontPadding="false"
+                        android:fontFamily="@font/notosanskr_medium"/>
+                    <Button
+                        android:layout_width="160dp"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="16dp"
+                        android:text="수정"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:backgroundTint="#000000">
+                    </Button>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--3. 리마인더 카드 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardEditReminder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingTop="25dp"
+                    android:paddingBottom="25dp"
+                    android:paddingStart="35dp"
+                    android:paddingEnd="35dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="리마인더"
+                        android:textSize="24sp"
+                        android:includeFontPadding="false"
+                        android:fontFamily="@font/notosanskr_bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="18시 00분"
+                        android:textSize="16sp"
+                        android:includeFontPadding="false"
+                        android:fontFamily="@font/notosanskr_medium"/>
+                    <Button
+                        android:layout_width="160dp"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="16dp"
+                        android:text="수정"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:backgroundTint="#000000">
+                    </Button>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- 하단 Nav -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottom_nav_bg"
+        app:menu="@menu/bottom_nav_menu"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
