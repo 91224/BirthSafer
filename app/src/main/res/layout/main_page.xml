@@ -387,7 +387,7 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- 6. ai 식단추천 -->
+            <!-- 6. ai 문구추천 -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardAiDiet"
                 android:layout_width="match_parent"
