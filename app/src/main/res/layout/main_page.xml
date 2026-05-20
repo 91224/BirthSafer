@@ -2,12 +2,13 @@
 <!-- 메인 페이지
      Description : 메인 화면입니다 -->
 <!-- Author       : 권유진
-     Contributors :
+     Contributors : 배서현
 
      Created     : 2026-04-26
-     Last Update : 2026-04-30 -->
+     Last Update : 2026-05-20 -->
 <!-- Revision History
-     v1.0.0 - UI 제작 -->
+     v1.0.0 - UI 제작
+     v1.1.0 - 혈압/혈당 TextView ID 추가 (2026.05.20 : 배서현) -->
 <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/mainPageXml"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -176,11 +177,13 @@
                             android:layout_width="6dp"
                             android:layout_height="wrap_content"/>
 
+                        <!-- 수정: ID를 bloodPressureValueTxt로 변경 -->
                         <TextView
+                            android:id="@+id/bloodPressureValueTxt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="120/80"
+                            android:text="--/--"
                             android:textSize="27sp"
                             android:includeFontPadding="false"
                             android:fontFamily="@font/inter_bold"/>
@@ -234,7 +237,6 @@
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         android:backgroundTint="#EAEAEA">
-
                     </Button>
 
                 </LinearLayout>
@@ -278,11 +280,13 @@
                             android:layout_width="6dp"
                             android:layout_height="wrap_content"/>
 
+                        <!-- 수정: ID 추가 -->
                         <TextView
+                            android:id="@+id/bloodSugarValueTxt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="\?"
+                            android:text="--"
                             android:textSize="27sp"
                             android:includeFontPadding="false"
                             android:fontFamily="@font/inter_bold"/>
@@ -328,7 +332,6 @@
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         android:backgroundTint="#EAEAEA">
-
                     </Button>
 
                 </LinearLayout>
@@ -384,7 +387,7 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- 6. ai 문구추천 -->
+            <!-- 6. ai 식단추천 -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardAiDiet"
                 android:layout_width="match_parent"
@@ -421,6 +424,7 @@
                         android:fontFamily="@font/inter_regular"/>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
+
         </LinearLayout>
 
     </ScrollView>
