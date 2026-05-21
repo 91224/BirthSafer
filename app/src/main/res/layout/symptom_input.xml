@@ -2,12 +2,12 @@
 <!-- 증상 입력 페이지
      Description : 증상 입력용 화면 -->
 <!-- Author       : 권유진
-     Contributors :
-
+     Contributors : 김지훈
      Created     : 2026-04-26
-     Last Update : 2026-04-30 -->
+     Last Update : 2026-05-21 -->
 <!-- Revision History
      v1.0.0 - UI 제작 -->
+
 <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/symptomInputXml"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -15,6 +15,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F0F0F0">
+
+
 
     <ScrollView
         android:layout_width="0dp"
@@ -78,6 +80,14 @@
                         android:includeFontPadding="false"
                         android:fontFamily="@font/notosanskr_bold"/>
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:text="메스꺼움"
+                        android:textColor="#333333"
+                        android:textSize="15sp" />
+
                     <com.google.android.material.slider.Slider
                         android:id="@+id/slider"
                         android:layout_width="match_parent"
@@ -90,6 +100,14 @@
                         app:thumbRadius="10dp"
                         app:trackColorActive="#888888"
                         app:trackColorInactive="#DDDDDD" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:text="피로감"
+                        android:textColor="#333333"
+                        android:textSize="15sp" />
 
                     <com.google.android.material.slider.Slider
                         android:id="@+id/slider2"
@@ -104,6 +122,14 @@
                         app:trackColorActive="#888888"
                         app:trackColorInactive="#DDDDDD" />
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:text="두통"
+                        android:textColor="#333333"
+                        android:textSize="15sp" />
+
                     <com.google.android.material.slider.Slider
                         android:id="@+id/slider3"
                         android:layout_width="match_parent"
@@ -117,6 +143,14 @@
                         app:trackColorActive="#888888"
                         app:trackColorInactive="#DDDDDD" />
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:text="부종"
+                        android:textColor="#333333"
+                        android:textSize="15sp" />
+
                     <com.google.android.material.slider.Slider
                         android:id="@+id/slider4"
                         android:layout_width="match_parent"
@@ -129,6 +163,14 @@
                         app:thumbRadius="10dp"
                         app:trackColorActive="#888888"
                         app:trackColorInactive="#DDDDDD" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:text="어지러움"
+                        android:textColor="#333333"
+                        android:textSize="15sp" />
 
                     <com.google.android.material.slider.Slider
                         android:id="@+id/slider5"
