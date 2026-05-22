@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 혈당 입력 페이지
+     Description : 혈당 입력용 화면 -->
+<!-- Author       : 권유진
+     Contributors :
+
+     Created     : 2026-04-26
+     Last Update : 2026-04-30 -->
+<!-- Revision History
+     v1.0.0 - UI 제작 -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/bloodSugarInputXml"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="#F0F0F0">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="24dp">
+
+            <!-- 년. 월. 일(요일) AM/PM 현재시각 -->
+            <TextView
+                android:id="@+id/NowTimeTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="날짜"
+                android:textSize="20sp"
+                android:layout_marginTop="80dp"
+                android:layout_gravity="center"
+                android:includeFontPadding="false"
+                android:fontFamily="@font/notosanskr_bold"/>
+
+            <!-- 혈당 측정 안내문구 카드 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardBSNotice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📌 혈당 측정 안내"
+                        android:textSize="20sp"
+                        android:includeFontPadding="false"
+                        android:fontFamily="@font/notosanskr_bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="혈당은 공복 1회와 식후 2시간 기준으로\n하루 3~4회 측정이 권장됩니다.\n식후 혈당은 식사 시작 기준 2시간 후 측정해주세요."
+                        android:textSize="16sp"
+                        android:includeFontPadding="false"
+                        android:fontFamily="@font/notosanskr_regular"/>
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 혈당 입력 카드 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardBSInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:text="혈당 입력"
+                        android:textSize="20sp"
+                        android:includeFontPadding="false"
+                        android:fontFamily="@font/notosanskr_bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="혈당 (mg/dL)"
+                        android:textSize="16sp"
+                        android:includeFontPadding="false"
+                        android:fontFamily="@font/notosanskr_medium"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="#7F7F7F"
+                        android:hint="100">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:gravity="center"
+                            android:textSize="20sp"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/checkBoxFBG"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="공복"
+                            android:textSize="20sp"
+                            android:includeFontPadding="false"
+                            android:fontFamily="@font/notosanskr_regular"/>
+
+                        <Space
+                            android:layout_width="30dp"
+                            android:layout_height="wrap_content"/>
+
+                        <CheckBox
+                            android:id="@+id/checkBoxPPG"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="식후"
+                            android:textSize="20sp"
+                            android:includeFontPadding="false"
+                            android:fontFamily="@font/notosanskr_regular"/>
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/bloodSugarSaveButton"
+                        android:layout_width="160dp"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginBottom="30dp"
+                        android:text="저장"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:backgroundTint="#000000">
+
+                    </Button>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
