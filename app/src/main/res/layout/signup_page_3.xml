@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 로그인 페이지
-     Description : 혈압 입력용 화면 -->
-<!-- Author       : 김지훈
-     Contributors : 권유진
+<!--
+    SignUpPage3Activity
+    Description : 회원가입 3단계 화면
 
-     Created     : 2026-04-09
-     Last Update : 2026-05-10 -->
-<!-- Revision History
-     v1.0.0 - UI 제작
-     v1.1.0 - UI 수정 -->
+    Author : 허원
+    Contributors : 권유진
+
+    Created : 2026-05-18
+    Last Update : 2026-05-22
+
+    Revision History
+    - 질환 선택 및 회원가입 완료 UI 구현
+-->
 <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/signUpPage3Xml"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -115,7 +118,7 @@
                         android:fontFamily="@font/notosanskr_regular"/>
                 </LinearLayout>
                 <Button
-                    android:id="@+id/signInButton"
+                    android:id="@+id/NextButton3"
                     android:layout_width="160dp"
                     android:layout_height="48dp"
                     android:layout_marginTop="40dp"

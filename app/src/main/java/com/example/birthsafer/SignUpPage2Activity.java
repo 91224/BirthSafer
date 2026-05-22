@@ -1,3 +1,15 @@
+/*
+ * SignUpPage2Activity
+ * Description : 회원가입 2단계 화면
+ * Author : 허원
+ * Contributors : 권유진
+ *
+ * Created : 2026-05-18
+ * Last Update : 2026-05-22
+ *
+ * Revision History
+ * - 출산 예정일 입력 및 DatePicker 기능 구현
+ */
 package com.example.birthsafer;
 
 import android.app.DatePickerDialog;
@@ -24,7 +36,7 @@ public class SignUpPage2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.signup2_page);
+        setContentView(R.layout.signup_page_2);
 
         dueDateLayout =
                 findViewById(R.id.tilDueDate);

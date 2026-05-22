@@ -1,3 +1,15 @@
+/*
+ * SignUpPageActivity
+ * Description : 회원가입 1단계 화면
+ * Author : 허원
+ * Contributors : 권유진
+ *
+ * Created : 2026-05-18
+ * Last Update : 2026-05-22
+ *
+ * Revision History
+ * - 이름/아이디/비밀번호 입력 및 ID 중복 확인 기능 구현
+ */
 package com.example.birthsafer;
 
 import android.content.Intent;

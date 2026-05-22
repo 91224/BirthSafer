@@ -1,3 +1,15 @@
+/*
+ * SignUpPage3Activity
+ * Description : 회원가입 3단계 화면
+ * Author : 허원
+ * Contributors : 권유진
+ *
+ * Created : 2026-05-18
+ * Last Update : 2026-05-22
+ *
+ * Revision History
+ * - 질환 정보 입력 및 Room DB 회원가입 저장 기능 구현
+ */
 package com.example.birthsafer;
 
 import android.content.Intent;
@@ -31,7 +43,7 @@ public class SignUpPage3Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.signup3_page);
+        setContentView(R.layout.signup_page_3);
 
         diabetesPreg =
                 findViewById(R.id.check_diabetes_preg);
