@@ -10,8 +10,10 @@ package com.example.birthsafer;
  *   v1.0.0 - 액티비티 파일 제작
  */
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,7 +22,13 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 // 🔥 추가
+import com.example.birthsafer.db.AppDatabase;
+import com.example.birthsafer.db.entity.User;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 
 public class MainPageActivity extends AppCompatActivity {
 
@@ -54,6 +62,36 @@ public class MainPageActivity extends AppCompatActivity {
             Intent intent = new Intent(MainPageActivity.this, SymptomInputActivity.class);
             startActivity(intent);
         });
+
+        // 유저 정보 불러오기
+        SharedPreferences prefs = getSharedPreferences("app_prefs", MODE_PRIVATE);
+        int userId = prefs.getInt("logged_in_user_id", -1);
+
+        TextView userNameTxt = findViewById(R.id.txt1);
+        TextView dueDateTxt = findViewById(R.id.dueDateTxt);
+        TextView dDayTxt = findViewById(R.id.dDayTxt);
+
+        new Thread(() -> {
+            User user = AppDatabase.getInstance(this).userDao().findById(userId);
+            runOnUiThread(() -> {
+                if (user != null) {
+                    userNameTxt.setText("안녕하세요, " + user.name + "님");
+                    dueDateTxt.setText(user.dueDate);
+                    LocalDate today = LocalDate.now();
+                    LocalDate dueDate = LocalDate.parse(user.dueDate,
+                            DateTimeFormatter.ofPattern("yyyy-M-d")); // DB 저장 형식 맞춤
+                    long dDay = ChronoUnit.DAYS.between(today, dueDate);
+
+                    if (dDay > 0) {
+                        dDayTxt.setText("D-" + dDay);
+                    } else if (dDay == 0) {
+                        dDayTxt.setText("D-Day");
+                    } else {
+                        dDayTxt.setText("D+" + Math.abs(dDay));
+                    }
+                }
+            });
+        }).start();
 
         BottomNavigationView bottomNav = findViewById(R.id.bottomNav);
 

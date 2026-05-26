@@ -35,7 +35,6 @@
                 android:id="@+id/txt1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="안녕하세요, 김민지님"
                 android:textSize="24sp"
                 android:layout_marginTop="80dp"
                 android:layout_gravity="center"
@@ -80,10 +79,10 @@
                             android:fontFamily="@font/notosanskr_bold"/>
 
                         <TextView
+                            android:id="@+id/dueDateTxt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:text="2026.05.30"
                             android:textColor="#7C7C7C"
                             android:textSize="15sp"
                             android:includeFontPadding="false"
@@ -91,6 +90,7 @@
                     </LinearLayout>
 
                     <TextView
+                        android:id="@+id/dDayTxt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="D-52"
@@ -279,6 +279,7 @@
                             android:layout_height="wrap_content"/>
 
                         <TextView
+                            android:id="@+id/bloodSugarValueTxt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
