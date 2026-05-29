@@ -1,4 +1,15 @@
 package com.example.birthsafer.db.dao;
+/*
+ * SymptomDao
+ * Description : 증상 기록 DAO
+ * Author       : 권유진
+ * Contributors : 배서현
+ * Created     : 2026-04-26
+ * Last Update : 2026-05-29
+ * Revision History
+ *   v1.0.0 - DAO 파일 제작
+ *   v1.1.0 - 메인페이지 증상 표시 연동 (2026.05.29 : 배서현)
+ */
 
 import androidx.room.Dao;
 import androidx.room.Insert;
