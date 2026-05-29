@@ -2,10 +2,10 @@
 <!-- calendar_day_item.xml
      Description : 캘린더 날짜 셀 한 칸을 담당하는 xml 파일입니다 -->
 <!-- Author       : 권유진
-     Contributors :
+     Contributors : 허원
 
      Created     : 2026-05-05
-     Last Update : 2026-05-10 -->
+     Last Update : 2026-05-29 -->
 <!-- Revision History
      v1.0.0 - UI 제작 -->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -19,6 +19,15 @@
         android:layout_gravity="top|center_horizontal"
         android:layout_marginTop="4dp"
         android:gravity="center"
-        android:textSize="14sp"/>
+        android:textSize="14sp" />
+
+    <View
+        android:id="@+id/indicator"
+        android:layout_width="6dp"
+        android:layout_height="6dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="6dp"
+        android:background="@drawable/bg_indicator"
+        android:visibility="gone" />
 
 </FrameLayout>
