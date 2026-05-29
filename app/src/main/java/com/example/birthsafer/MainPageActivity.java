@@ -3,11 +3,12 @@ package com.example.birthsafer;
  * main_page.xml 액티비티
  * Description : 메인페이지
  * Author       : 권유진
- * Contributors :
+ * Contributors : 배서현
  * Created     : 2026-04-26
- * Last Update : 2026-05-10
+ * Last Update : 2026-05-29
  * Revision History
  *   v1.0.0 - 액티비티 파일 제작
+ *   v1.1.0 - 혈압/혈당/증상 입력값 메인 카드에 표시 (2026.05.29 : 배서현)
  */
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -24,7 +25,14 @@ import androidx.core.view.WindowInsetsCompat;
 // 🔥 추가
 import com.example.birthsafer.db.AppDatabase;
 import com.example.birthsafer.db.entity.User;
+import com.example.birthsafer.db.dao.BloodPressureDao;
+import com.example.birthsafer.db.dao.BloodSugarDao;
+import com.example.birthsafer.db.dao.SymptomDao;
+import com.example.birthsafer.db.entity.BloodPressureRecord;
+import com.example.birthsafer.db.entity.BloodSugarRecord;
+import com.example.birthsafer.db.entity.SymptomRecord;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import java.util.List;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -93,8 +101,95 @@ public class MainPageActivity extends AppCompatActivity {
             });
         }).start();
 
-        BottomNavigationView bottomNav = findViewById(R.id.bottomNav);
+        // 혈압/혈당/증상 TextView 연결
+        TextView bloodPressureValueTxt = findViewById(R.id.bloodPressureValueTxt);
+        TextView systolicRangeTxt = findViewById(R.id.systolicRangeTxt);
+        TextView diastolicRangeTxt = findViewById(R.id.diastolicRangeTxt);
+        TextView bloodSugarValueTxt = findViewById(R.id.bloodSugarValueTxt);
+        TextView bloodSugarRangeTxt = findViewById(R.id.bloodSugarRangeTxt);
+        TextView symptomSummaryTxt = findViewById(R.id.symptomSummaryTxt);
 
+        String today = new java.text.SimpleDateFormat(
+                "yyyy-MM-dd", java.util.Locale.getDefault()
+        ).format(new java.util.Date());
+
+        BloodPressureDao bpDao = AppDatabase.getInstance(this).bloodPressureDao();
+        BloodSugarDao bsDao = AppDatabase.getInstance(this).bloodSugarDao();
+        SymptomDao symptomDao = AppDatabase.getInstance(this).symptomDao();
+
+        // 혈압 카드
+        new Thread(() -> {
+            BloodPressureRecord latest = bpDao.getLatestRecord(userId);
+            List<BloodPressureRecord> todayList = bpDao.getByDate(userId, today);
+            runOnUiThread(() -> {
+                if (latest != null) {
+                    bloodPressureValueTxt.setText(latest.systolic + "/" + latest.diastolic);
+                } else {
+                    bloodPressureValueTxt.setText("?/?");
+                }
+                if (todayList.isEmpty()) {
+                    systolicRangeTxt.setText("아직 혈압을 입력하지 않았어요");
+                    diastolicRangeTxt.setText("");
+                } else if (todayList.size() == 1) {
+                    systolicRangeTxt.setText("수축기 " + todayList.get(0).systolic);
+                    diastolicRangeTxt.setText("이완기 " + todayList.get(0).diastolic);
+                } else {
+                    int minS = todayList.stream().mapToInt(r -> r.systolic).min().getAsInt();
+                    int maxS = todayList.stream().mapToInt(r -> r.systolic).max().getAsInt();
+                    int minD = todayList.stream().mapToInt(r -> r.diastolic).min().getAsInt();
+                    int maxD = todayList.stream().mapToInt(r -> r.diastolic).max().getAsInt();
+                    systolicRangeTxt.setText("수축기 " + minS + "-" + maxS);
+                    diastolicRangeTxt.setText("이완기 " + minD + "-" + maxD);
+                }
+            });
+        }).start();
+
+        // 혈당 카드
+        new Thread(() -> {
+            BloodSugarRecord latest = bsDao.getLatestRecord(userId);
+            List<BloodSugarRecord> todayList = bsDao.getByDate(userId, today);
+            runOnUiThread(() -> {
+                if (latest != null) {
+                    bloodSugarValueTxt.setText(String.valueOf(latest.bloodSugar));
+                } else {
+                    bloodSugarValueTxt.setText("?");
+                }
+                if (todayList.isEmpty()) {
+                    bloodSugarRangeTxt.setText("아직 혈당을 입력하지 않았어요");
+                } else if (todayList.size() == 1) {
+                    bloodSugarRangeTxt.setText(String.valueOf(todayList.get(0).bloodSugar));
+                } else {
+                    int min = todayList.stream().mapToInt(r -> r.bloodSugar).min().getAsInt();
+                    int max = todayList.stream().mapToInt(r -> r.bloodSugar).max().getAsInt();
+                    bloodSugarRangeTxt.setText(min + "-" + max);
+                }
+            });
+        }).start();
+
+        // 증상 카드
+        new Thread(() -> {
+            List<SymptomRecord> todaySymptoms = symptomDao.getByDate(userId, today);
+            runOnUiThread(() -> {
+                if (todaySymptoms.isEmpty()) {
+                    symptomSummaryTxt.setText("아직 증상을 입력하지 않았어요");
+                } else {
+                    List<String> names = new java.util.ArrayList<>();
+                    SymptomRecord s = todaySymptoms.get(0);
+                    if (s.nausea > 0)    names.add("메스꺼움");
+                    if (s.fatigue > 0)   names.add("피로감");
+                    if (s.headache > 0)  names.add("두통");
+                    if (s.edema > 0)     names.add("부종");
+                    if (s.dizziness > 0) names.add("어지러움");
+                    if (names.isEmpty()) {
+                        symptomSummaryTxt.setText("아직 증상을 입력하지 않았어요");
+                    } else {
+                        symptomSummaryTxt.setText(String.join(", ", names));
+                    }
+                }
+            });
+        }).start();
+
+        BottomNavigationView bottomNav = findViewById(R.id.bottomNav);
         bottomNav.setOnItemSelectedListener(item -> {
 
             if (item.getItemId() == R.id.nav_main_page) {

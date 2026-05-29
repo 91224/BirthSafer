@@ -7,6 +7,7 @@
  * Last Update : 2026-05-10
  * Revision History
  *   v1.0.0 - 액티비티 파일 제작
+ * v1.1.0 - 현재 날짜/시간 표시 기능 추가 -->
  */
 package com.example.birthsafer;
 
@@ -46,8 +47,7 @@ public class BloodSugarInputActivity extends AppCompatActivity {
         // 현재 시각 표시
         TextView nowTimeTxt = findViewById(R.id.NowTimeTxt);
         nowTimeTxt.setText(new java.text.SimpleDateFormat(
-                "yyyy년 MM월 dd일 (E) a hh:mm",
-                java.util.Locale.KOREAN
+                "M월 d일 (E) a h:mm", java.util.Locale.KOREAN
         ).format(new java.util.Date()));
 
         TextInputLayout sugarLayout = findViewById(R.id.BSSugarInputLayout);

@@ -8,6 +8,7 @@
  * Revision History
  *   v1.0.0 - 액티비티 파일 제작
  *   v1.1.0 - Room DB 연동, 혈압 저장 기능 구현 (2026.05.20 : 배서현)
+ *   v1.2.0 - 현재 날짜 및 시간 표시 형식 수정 (2026.05.29 : 배서현)
  */
 package com.example.birthsafer;
 
@@ -45,9 +46,10 @@ public class BloodPressureInputActivity extends AppCompatActivity {
         // 현재 시각 표시
         TextView nowTimeTxt = findViewById(R.id.NowTimeTxt);
         String now = new java.text.SimpleDateFormat(
-                "yyyy년 MM월 dd일 (E) a hh:mm",
+                "M월 d일 (E) a h:mm",
                 java.util.Locale.KOREAN
         ).format(new java.util.Date());
+
         nowTimeTxt.setText(now);
 
         // XML 입력 요소 연결

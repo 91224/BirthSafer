@@ -8,6 +8,7 @@
      Last Update : 2026-04-30 -->
 <!-- Revision History
      v1.0.0 - UI 제작 -->
+<!-- v1.1.0 - 현재 날짜/시간 표시 기능 추가, 형식 수정 (2026.05.29 : 배서현) -->
 <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/bloodPressureInputXml"
     xmlns:android="http://schemas.android.com/apk/res/android"

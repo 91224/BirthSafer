@@ -8,6 +8,7 @@
  * Revision History
  *   v1.0.0 - 액티비티 파일 제작
  *   v1.1.0 - Room Db 연결 (2026.05.21 : 김지훈)
+ *   v1.2.0 - 현재 날짜 및 시간 표시 형식 수정 (2026.05.29 : 배서현)
  */
 package com.example.birthsafer;
 
@@ -45,7 +46,7 @@ public class SymptomInputActivity extends AppCompatActivity {
 
         TextView nowTimeTxt = findViewById(R.id.NowTimeTxt);
         nowTimeTxt.setText(new java.text.SimpleDateFormat(
-                "yyyy년 MM월 dd일 (E) a hh:mm", java.util.Locale.KOREAN
+                "M월 d일 (E) a h:mm", java.util.Locale.KOREAN
         ).format(new java.util.Date()));
 
         Slider sliderNausea    = findViewById(R.id.slider);
