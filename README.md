@@ -68,3 +68,10 @@ git commit -m "feat: 로그인 기능 구현"
 
 # 푸시
 git push origin feature/login
+
+## 🔑 API 키 설정하는 방법
+
+1. 프로젝트 루트에 `local.properties` 파일 생성 (이미 존재한다면 패스)
+2. local.properties에 아래 내용 추가:
+   GEMINI_API_KEY=여기에 본인 Api 키를 입력하세요
+3. 3. [Google AI Studio](https://aistudio.google.com/app/apikey)에서 무료 키 발급받으실 수 있습니다

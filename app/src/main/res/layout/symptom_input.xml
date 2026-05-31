@@ -2,13 +2,14 @@
 <!-- 증상 입력 페이지
      Description : 증상 입력용 화면 -->
 <!-- Author       : 권유진
-     Contributors : 김지훈
+     Contributors : 김지훈, 배서현
 
      Created     : 2026-04-26
-     Last Update : 2026-05-21 -->
+     Last Update : 2026-05-29 -->
 <!-- Revision History
      v1.0.0 - UI 제작
-     v1.0.0 - UI 수정 (2026-05-21 : 김지훈) -->
+     v1.0.0 - UI 수정 (2026-05-21 : 김지훈)
+     v1.1.0 - 현재 날짜/시간 표시 기능 추가, 형식 수정 (2026.05.29 : 배서현) -->
 <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/symptomInputXml"
     xmlns:android="http://schemas.android.com/apk/res/android"

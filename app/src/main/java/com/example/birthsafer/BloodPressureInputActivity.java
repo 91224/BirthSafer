@@ -4,10 +4,11 @@
  * Author       : 권유진
  * Contributors : 배서현
  * Created     : 2026-04-26
- * Last Update : 2026-05-20
+ * Last Update : 2026-05-29
  * Revision History
  *   v1.0.0 - 액티비티 파일 제작
  *   v1.1.0 - Room DB 연동, 혈압 저장 기능 구현 (2026.05.20 : 배서현)
+ *   v1.2.0 - 현재 날짜 및 시간 표시 형식 수정 (2026.05.29 : 배서현)
  */
 package com.example.birthsafer;
 

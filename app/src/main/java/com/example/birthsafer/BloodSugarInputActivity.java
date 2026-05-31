@@ -2,11 +2,12 @@
  * blood_Sugar_input.xml 액티비티
  * Description : 혈당 입력화면 액티비티
  * Author       : 권유진
- * Contributors :
+ * Contributors : 배서현
  * Created     : 2026-04-26
- * Last Update : 2026-05-10
+ * Last Update : 2026-05-29
  * Revision History
  *   v1.0.0 - 액티비티 파일 제작
+ *   v1.2.0 - 현재 날짜 및 시간 표시 형식 수정 (2026.05.29 : 배서현)
  */
 package com.example.birthsafer;
 
@@ -46,8 +47,7 @@ public class BloodSugarInputActivity extends AppCompatActivity {
         // 현재 시각 표시
         TextView nowTimeTxt = findViewById(R.id.NowTimeTxt);
         nowTimeTxt.setText(new java.text.SimpleDateFormat(
-                "yyyy년 MM월 dd일 (E) a hh:mm",
-                java.util.Locale.KOREAN
+                "M월 d일 (E) a h:mm", java.util.Locale.KOREAN
         ).format(new java.util.Date()));
 
         TextInputLayout sugarLayout = findViewById(R.id.BSSugarInputLayout);

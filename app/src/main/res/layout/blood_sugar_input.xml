@@ -6,14 +6,11 @@
      Contributors : 배서현
 
      Created     : 2026-04-26
-     Update : 2026-04-30
-     Last Update : 2026-05-19 -->
+     Last Update : 2026-05-29 -->
 <!-- Revision History
      v1.0.0 - UI 제작
-     v1.1.0 - BSSugarInputLayout, BSSugarInputEditText ID 추가 / inputType="number" 추가  (2026.05.19 : 배서현) -->
-<!--추가 android:id="@+id/BSSugarInputLayout" -->
-<!--추가  android:id="@+id/BSSugarInputEditText" -->
-<!--추가  android:inputType="number"/> 축약 -->
+     v1.0.1 - BSSugarInputLayout, BSSugarInputEditText ID 추가 / inputType="number" 추가  (2026.05.19 : 배서현)
+     v1.1.0 - 현재 날짜/시간 표시 기능 추가, 형식 수정 (2026.05.29 : 배서현) -->
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/bloodSugarInputXml"
