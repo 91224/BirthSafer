@@ -2,12 +2,13 @@
 <!-- 마이페이지
      Description : 마이페이지 및 설정페이지 -->
 <!-- Author       : 권유진
-     Contributors :
+     Contributors : 배서현
 
      Created     : 2026-05-05
-     Last Update : 2026-05-10 -->
+     Last Update : 2026-05-29 -->
 <!-- Revision History
-     v1.0.0 - UI 제작 -->
+     v1.0.0 - UI 제작
+     v1.1.0 - 사용자 정보 표시용 TextView ID 추가 (2026.05.29 : 배서현) -->
 <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/myPageXml"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -78,6 +79,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="2dp"
+                                android:id="@+id/userNameTxt"
                                 android:text="김민지"
                                 android:textSize="24sp"
                                 android:includeFontPadding="false"
@@ -109,6 +111,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:id="@+id/myPageDueDateTxt"
                                     android:text="2026.05.30"
                                     android:textSize="15sp"
                                     android:textColor="#7C7C7C"
@@ -172,6 +175,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
+                        android:id="@+id/conditionTxt"
                         android:text="임신성 당뇨"
                         android:textSize="16sp"
                         android:includeFontPadding="false"

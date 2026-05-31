@@ -8,7 +8,7 @@
      Last Update : 2026-05-10 -->
 <!-- Revision History
      v1.0.0 - UI 제작
-     v1.1.0 - UI 수정 -->
+     v1.1.0 - UI 수정 (2026.05.03 : 권유진)-->
 <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/signInPageXml"
     xmlns:android="http://schemas.android.com/apk/res/android"

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- bg_indicator.xml
+     Description : 캘린더 날짜 인디케이터 점 drawable -->
+<!-- Author       : 허원
+     Contributors :
+
+     Created     : 2026-05-29
+     Last Update : 2026-05-29 -->
+<!-- Revision History
+     v1.0.0 - 캘린더 컬러 인디케이터 drawable 생성 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+
+    <solid android:color="#4CAF50"/>
+
+    <size
+        android:width="20dp"
+        android:height="20dp"/>
+
+</shape>

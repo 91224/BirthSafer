@@ -8,6 +8,7 @@ package com.example.birthsafer;
  * Last Update : 2026-05-10
  * Revision History
  *   v1.0.0 - 액티비티 파일 제작
+ *   v1.0.1 - 무한 실행 버그 해결
  */
 import android.content.Intent;
 import android.os.Bundle;
@@ -44,8 +45,7 @@ public class CalendarDetailActivity extends AppCompatActivity {
             }
 
             else if (item.getItemId() == R.id.nav_summary_page) {
-                startActivity(new Intent(this, CalendarDetailActivity.class));
-                return true;
+                return true; // 현재 화면이므로 그냥 true만
             }
 
             else if (item.getItemId() == R.id.nav_calendar_page) {

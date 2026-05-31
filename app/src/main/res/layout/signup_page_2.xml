@@ -5,10 +5,11 @@
      Contributors : 권유진
 
      Created     : 2026-04-09
-     Last Update : 2026-05-10 -->
+     Last Update : 2026-05-22 -->
 <!-- Revision History
      v1.0.0 - UI 제작
-     v1.1.0 - UI 수정 -->
+     v1.1.0 - UI 수정 (2026.05.03 : 권유진)
+     v1.1.1 - button ID 변경 (2026.05.22 : 허원) -->
 <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/signUpPage2Xml"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -87,7 +88,7 @@
                         android:hint="출산 예정일을 입력해주세요" />
                 </com.google.android.material.textfield.TextInputLayout>
                 <Button
-                    android:id="@+id/signInButton"
+                    android:id="@+id/NextButton2"
                     android:layout_width="160dp"
                     android:layout_height="48dp"
                     android:layout_marginTop="40dp"

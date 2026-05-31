@@ -2,12 +2,13 @@
 <!-- 메인 페이지
      Description : 메인 화면입니다 -->
 <!-- Author       : 권유진
-     Contributors :
+     Contributors : 배서현
 
      Created     : 2026-04-26
-     Last Update : 2026-04-30 -->
+     Last Update : 2026-05-29 -->
 <!-- Revision History
-     v1.0.0 - UI 제작 -->
+     v1.0.0 - UI 제작
+     v1.1.0 - 혈압/혈당/증상 표시용 TextView ID 추가 (2026.05.29 : 배서현) -->
 <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/mainPageXml"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -35,7 +36,6 @@
                 android:id="@+id/txt1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="안녕하세요, 김민지님"
                 android:textSize="24sp"
                 android:layout_marginTop="80dp"
                 android:layout_gravity="center"
@@ -80,10 +80,10 @@
                             android:fontFamily="@font/notosanskr_bold"/>
 
                         <TextView
+                            android:id="@+id/dueDateTxt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:text="2026.05.30"
                             android:textColor="#7C7C7C"
                             android:textSize="15sp"
                             android:includeFontPadding="false"
@@ -91,6 +91,7 @@
                     </LinearLayout>
 
                     <TextView
+                        android:id="@+id/dDayTxt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="D-52"
@@ -180,6 +181,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
+                            android:id="@+id/bloodPressureValueTxt"
                             android:text="120/80"
                             android:textSize="27sp"
                             android:includeFontPadding="false"
@@ -210,6 +212,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:id="@+id/systolicRangeTxt"
                             android:text="수축기 120-142"
                             android:textSize="16sp"
                             android:includeFontPadding="false"
@@ -218,6 +221,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:id="@+id/diastolicRangeTxt"
                             android:text="이완기 74-92"
                             android:textSize="16sp"
                             android:includeFontPadding="false"
@@ -279,6 +283,7 @@
                             android:layout_height="wrap_content"/>
 
                         <TextView
+                            android:id="@+id/bloodSugarValueTxt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
@@ -312,6 +317,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:id="@+id/bloodSugarRangeTxt"
                             android:text="아직 혈당을 입력하지 않았어요"
                             android:textSize="16sp"
                             android:includeFontPadding="false"
@@ -367,6 +373,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
+                        android:id="@+id/symptomSummaryTxt"
                         android:text="메스꺼움, 피로감, 두통"
                         android:textSize="16sp"
                         android:includeFontPadding="false"
