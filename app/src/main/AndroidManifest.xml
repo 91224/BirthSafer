@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BirthSafer">
         <activity
-            android:name=".SignInPageActivity"
+            android:name=".SignUpPageActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,15 +22,16 @@
         </activity>
         <activity android:name=".BloodPressureInputActivity" />
         <activity android:name=".BloodSugarInputActivity" />
+        <activity android:name=".SignInPageActivity" />
         <activity android:name=".SymptomInputActivity" />
-        <activity android:name=".SignUpPageActivity" />
         <activity android:name=".MainPageActivity" />
         <activity android:name=".SignUpPage2Activity" />
         <activity android:name=".SignUpPage3Activity" />
         <activity android:name=".CalendarActivity"/>
         <activity android:name=".MyPageActivity"/>
         <activity android:name=".CalendarDetailActivity"/>
-        <activity android:name=".ReportActivity"/>
+        <activity android:name=".ReportActivity" android:exported="false" />
+
     </application>
 
 </manifest>
