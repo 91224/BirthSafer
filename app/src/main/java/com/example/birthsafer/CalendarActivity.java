@@ -9,6 +9,7 @@ package com.example.birthsafer;
  * Revision History
  *   v1.0.0 - 액티비티 파일 제작
  *   v1.1.0 - 컬러 인디케이터 구현 (2026.05.29 : 허원)
+ *   v1.2.0 - 주간 리포트 버튼,월간 리포트 버튼 추가 (26.06.01 : 지훈)
  */
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -17,6 +18,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.content.Intent;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -238,6 +241,23 @@ public class CalendarActivity extends AppCompatActivity {
 
             return false;
         });
+
+        // 주간 리포트 버튼
+        Button report1Button = findViewById(R.id.report1Button);
+        report1Button.setOnClickListener(v -> {
+            Intent intent = new Intent(this, ReportActivity.class);
+            intent.putExtra("reportType", "weekly");
+            startActivity(intent);
+        });
+
+        // 월간 리포트 버튼
+        Button report2Button = findViewById(R.id.report2Button);
+        report2Button.setOnClickListener(v -> {
+            Intent intent = new Intent(this, ReportActivity.class);
+            intent.putExtra("reportType", "monthly");
+            startActivity(intent);
+        });
+
     }
 
     class DayViewContainer extends ViewContainer {

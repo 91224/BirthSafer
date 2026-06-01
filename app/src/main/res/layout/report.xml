@@ -2,12 +2,13 @@
 <!-- 리포트 페이지
      Description : 혈압 입력용 화면 -->
 <!-- Author       : 권유진
-     Contributors :
+     Contributors : 김지훈
 
      Created     : 2026-05-05
-     Last Update : 2026-05-10 -->
+     Last Update : 2026-06-01 -->
 <!-- Revision History
-     v1.0.0 - UI 제작 -->
+     v1.0.0 - UI 제작
+     v1.1.0 - UI 수정 -->
 <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/reportXml"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -247,6 +248,7 @@
                             android:orientation="horizontal">
 
                             <TextView
+                                android:id="@+id/tvAvgFBG"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="90.7"
@@ -312,6 +314,7 @@
                             android:orientation="horizontal">
 
                             <TextView
+                                android:id="@+id/tvAvgPPG"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="116.2"
@@ -397,14 +400,11 @@
                         android:includeFontPadding="false"
                         android:fontFamily="@font/notosanskr_bold"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="그래프"
-                        android:textSize="16sp"
-                        android:includeFontPadding="false"
-                        android:fontFamily="@font/notosanskr_regular"/>
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/bloodSugarChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:layout_marginTop="8dp"/>
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
