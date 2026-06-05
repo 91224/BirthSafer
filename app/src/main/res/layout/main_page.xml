@@ -419,9 +419,10 @@
                         android:includeFontPadding="false"
                         android:fontFamily="@font/notosanskr_bold"/>
                     <TextView
+                        android:id="@+id/aiDietTxt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="문구추천 2"
+                        android:text="Ai가 분석하고 있어요"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:includeFontPadding="false"

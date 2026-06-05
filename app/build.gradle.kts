@@ -1,6 +1,11 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
 }
+
+val properties = Properties()
+properties.load(rootProject.file("local.properties").inputStream())
 
 android {
     namespace = "com.example.birthsafer"
@@ -48,8 +53,6 @@ dependencies {
     // Room DB
     implementation ("androidx.room:room-runtime:2.6.1")
     annotationProcessor ("androidx.room:room-compiler:2.6.1")
-    // googleAI
-    implementation("com.google.ai.client.generativeai:generativeai:0.9.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
