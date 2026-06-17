@@ -22,7 +22,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-// 🔥 추가
 import com.example.birthsafer.db.AppDatabase;
 import com.example.birthsafer.db.entity.User;
 import com.example.birthsafer.db.dao.BloodPressureDao;

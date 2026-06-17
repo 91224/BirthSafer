@@ -54,4 +54,6 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
     coreLibraryDesugaring ("com.android.tools:desugar_jdk_libs:2.0.4")
+    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
+    implementation ("androidx.appcompat:appcompat:1.x.x")
 }

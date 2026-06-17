@@ -105,41 +105,6 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- 2. 증상 및 알림 요약 -->
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardAiRecommend"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                app:cardBackgroundColor="#FFFFFF"
-                app:cardCornerRadius="22dp"
-                app:cardElevation="0dp"
-                app:strokeWidth="0dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:paddingTop="25dp"
-                    android:paddingBottom="25dp"
-                    android:paddingStart="35dp"
-                    android:paddingEnd="35dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="문구추천"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:includeFontPadding="false"
-                        android:fontFamily="@font/inter_regular"/>
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
             <!-- 3. 혈압 카드 -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardBloodPressure"

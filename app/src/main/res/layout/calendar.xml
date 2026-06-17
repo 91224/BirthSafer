@@ -2,12 +2,13 @@
 <!-- 캘린더 페이지
      Description : 캘린더 화면 (오류 아닙니다... 실행시 정상적으로 표시됨) -->
 <!-- Author       : 권유진
-     Contributors :
+     Contributors : 김지훈
 
      Created     : 2026-05-05
      Last Update : 2026-05-10 -->
 <!-- Revision History
-     v1.0.0 - UI 제작 -->
+     v1.0.0 - UI 제작
+     v1.1.0 - 혈당 카드+혈당 그래프+ 캘린더 리포트 버튼 연결 (2026.06.02 : 김지훈)-->
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/calendarXml"
@@ -17,10 +18,15 @@
     android:layout_height="match_parent"
     android:background="#F0F0F0">
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingBottom="80dp"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,7 +34,6 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- 캘린더가 들어가는 카드입니다 -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardCalendar"
                 android:layout_width="match_parent"
@@ -49,46 +54,43 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-
             <!-- 주간 리포트 생성 버튼 -->
             <Button
                 android:id="@+id/report1Button"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
                 android:layout_marginTop="30dp"
-
                 android:layout_gravity="center"
                 android:text="이번주 리포트 생성하기"
                 android:textColor="@color/white"
                 android:textSize="16sp"
-                android:backgroundTint="#000000">
-
-            </Button>
+                android:backgroundTint="#000000"/>
 
             <!-- 월간 리포트 생성 버튼 -->
             <Button
                 android:id="@+id/report2Button"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
+                android:layout_marginTop="12dp"
                 android:layout_gravity="center"
                 android:text="이번달 리포트 생성하기"
                 android:textColor="@color/white"
                 android:textSize="16sp"
-                android:backgroundTint="#000000">
+                android:backgroundTint="#000000"/>
 
-            </Button>
         </LinearLayout>
     </ScrollView>
 
     <!-- 하단 Nav -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
-    android:id="@+id/bottomNav"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:background="@drawable/bottom_nav_bg"
-    app:menu="@menu/bottom_nav_menu"
-    app:labelVisibilityMode="labeled"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"/>
+        android:id="@+id/bottomNav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottom_nav_bg"
+        app:menu="@menu/bottom_nav_menu"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

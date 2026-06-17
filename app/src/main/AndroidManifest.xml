@@ -30,7 +30,7 @@
         <activity android:name=".CalendarActivity"/>
         <activity android:name=".MyPageActivity"/>
         <activity android:name=".CalendarDetailActivity"/>
-        <activity android:name=".ReportActivity"/>
+        <activity android:name=".ReportActivity" android:exported="false"/>
     </application>
 
 </manifest>
