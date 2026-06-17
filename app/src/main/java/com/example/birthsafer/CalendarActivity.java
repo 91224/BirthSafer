@@ -3,13 +3,16 @@ package com.example.birthsafer;
  * calendar.xml 액티비티
  * Description : 캘린더 화면 액티비티
  * Author       : 권유진
- * Contributors :
+ * Contributors : 허원
  * Created     : 2026-04-26
- * Last Update : 2026-05-10
+ * Last Update : 2026-05-29
  * Revision History
  *   v1.0.0 - 액티비티 파일 제작
+ *   v1.1.0 - 컬러 인디케이터 구현 (2026.05.29 : 허원)
  */
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -25,10 +28,16 @@ import com.kizitonwose.calendar.view.CalendarView;
 import com.kizitonwose.calendar.view.MonthDayBinder;
 import com.kizitonwose.calendar.view.MonthHeaderFooterBinder;
 import com.kizitonwose.calendar.view.ViewContainer;
+import com.example.birthsafer.db.AppDatabase;
+import com.example.birthsafer.db.dao.BloodPressureDao;
+import com.example.birthsafer.db.dao.BloodSugarDao;
+import com.example.birthsafer.db.entity.BloodPressureRecord;
+import com.example.birthsafer.db.entity.BloodSugarRecord;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.YearMonth;
+import java.util.List;
 
 public class CalendarActivity extends AppCompatActivity {
 
@@ -75,6 +84,113 @@ public class CalendarActivity extends AppCompatActivity {
                 } else {
                     container.textView.setBackground(null);
                 }
+                SharedPreferences prefs = getSharedPreferences("app_prefs", MODE_PRIVATE);
+                int userId = prefs.getInt("logged_in_user_id", -1);
+
+                String dateStr = day.getDate().toString();
+
+                BloodPressureDao bpDao =
+                        AppDatabase.getInstance(CalendarActivity.this).bloodPressureDao();
+
+                BloodSugarDao bsDao =
+                        AppDatabase.getInstance(CalendarActivity.this).bloodSugarDao();
+
+                new Thread(() -> {
+
+                    List<BloodPressureRecord> bpList =
+                            bpDao.getByDate(userId, dateStr);
+
+                    List<BloodSugarRecord> bsList =
+                            bsDao.getByDate(userId, dateStr);
+
+                    int level = 0;
+                    boolean hasHypoglycemia = false;
+
+                    for (BloodPressureRecord r : bpList) {
+
+                        int l;
+
+                        if (r.systolic >= 160 || r.diastolic >= 110)
+                            l = 4;
+                        else if (r.systolic >= 140 || r.diastolic >= 90)
+                            l = 3;
+                        else if (r.systolic >= 120 || r.diastolic >= 80)
+                            l = 2;
+                        else
+                            l = 1;
+
+                        if (l > level)
+                            level = l;
+                    }
+
+                    for (BloodSugarRecord r : bsList) {
+
+                        int l;
+
+                        if (r.bloodSugar < 60) {
+                            hasHypoglycemia = true;
+                            l = 5;
+                        }
+                        else if (r.isFasting) {
+
+                            if (r.bloodSugar >= 95)
+                                l = 4;
+                            else if (r.bloodSugar >= 90)
+                                l = 2;
+                            else
+                                l = 1;
+                        }
+                        else {
+
+                            if (r.bloodSugar >= 120)
+                                l = 4;
+                            else if (r.bloodSugar >= 110)
+                                l = 2;
+                            else
+                                l = 1;
+                        }
+
+                        if (l > level)
+                            level = l;
+                    }
+
+                    final int finalLevel = level;
+                    final boolean finalHypo = hasHypoglycemia;
+
+                    runOnUiThread(() -> {
+
+                        if (finalLevel == 0) {
+
+                            container.indicator.setVisibility(View.GONE);
+                            return;
+                        }
+
+                        container.indicator.setVisibility(View.VISIBLE);
+
+                        int color;
+
+                        if (finalHypo) {
+                            color = android.graphics.Color.parseColor("#9C27B0");
+                        }
+                        else if (finalLevel >= 4) {
+                            color = android.graphics.Color.parseColor("#F44336");
+                        }
+                        else if (finalLevel == 3) {
+                            color = android.graphics.Color.parseColor("#FF9800");
+                        }
+                        else if (finalLevel == 2) {
+                            color = android.graphics.Color.parseColor("#FFC107");
+                        }
+                        else {
+                            color = android.graphics.Color.parseColor("#4CAF50");
+                        }
+
+                        container.indicator.setBackgroundTintList(
+                                ColorStateList.valueOf(color)
+                        );
+                    });
+
+                }).start();
 
                 container.getView().setOnClickListener(v -> {
                     Toast.makeText(CalendarActivity.this,
@@ -126,9 +242,12 @@ public class CalendarActivity extends AppCompatActivity {
 
     class DayViewContainer extends ViewContainer {
         TextView textView;
+        View indicator;
+
         public DayViewContainer(View view) {
             super(view);
             textView = view.findViewById(R.id.dayText);
+            indicator = view.findViewById(R.id.indicator);
         }
     }
 
