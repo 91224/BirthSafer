@@ -8,7 +8,8 @@
      Last Update : 2026-05-29 -->
 <!-- Revision History
      v1.0.0 - UI 제작
-     v1.1.0 - 혈압/혈당/증상 표시용 TextView ID 추가 (2026.05.29 : 배서현) -->
+     v1.1.0 - 혈압/혈당/증상 표시용 TextView ID 추가 (2026.05.29 : 배서현)
+     v1.2.0 - Ai 피드백 추가 (2026.06.03 : 권유진) -->
 <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/mainPageXml"
     xmlns:android="http://schemas.android.com/apk/res/android"
