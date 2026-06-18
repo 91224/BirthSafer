@@ -71,7 +71,7 @@ public class AiComment {
                 os.close();
 
                 int responseCode = conn.getResponseCode();
-                android.util.Log.e("AiComment", "응답코드: " + responseCode); // ← 추가
+                android.util.Log.e("AiComment", "응답코드: " + responseCode);
 
                 java.io.InputStream is = responseCode == 200
                         ? conn.getInputStream()
@@ -84,7 +84,7 @@ public class AiComment {
                     sb.append(line);
                 }
                 String response = sb.toString();
-                android.util.Log.e("AiComment", "응답내용: " + response); // ← 추가
+                android.util.Log.e("AiComment", "응답내용: " + response);
 
                 if (responseCode == 200) {
                     JSONObject json = new JSONObject(response);
